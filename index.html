@@ -19,130 +19,132 @@
   <body>
     <header class="container-fluid text-center mb-5 bg-dark text-light">
       <h1 class="display-1 fw-medium">Welcome</h1>
-      <div id="timeDisplay">Jun 30, 2022 at 08:37:48 am</div>
+      <p id="timeDisplay">.</p>
     </header>
 
     <!-- <div class="container-fluid"></div> -->
     <div class="container-fluid">
       <main class="row justify-content-between">
         <!-- Card element -->
-        <div class="col-3">
-          <div class="card text-center" style="width: 18rem">
+        <div class="col-12">
+          <div class="card text-center p-0" style="width: 18rem">
+            <div class="card-header bg-dark text-light">Project Tracker</div>
             <div class="card-body">
-              <h5 class="card-title">Project Tracker</h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Click "Add Project" button to input your project name, select
+                your project type, and due date.
               </p>
               <button
                 type="button"
                 class="btn btn-primary"
                 data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-target="#ProjectData"
               >
-                Launch demo modal
+                Add Project
               </button>
             </div>
           </div>
         </div>
-          
+
         <!-- Table -->
-        <div class="col-9">
-          <table class="table table-striped">
+        <div class="col-12">
+          <table class="table table-striped col-9">
             <thead class="table-dark">
               <tr>
                 <!-- <th scope="col">#</th> -->
-                <th scope="col">Project name</th>
-                <th scope="col">Project type</th>
-                <th scope="col">Due date</th>
+                <th class="col-6" scope="col">Project name</th>
+                <th class="col-3" scope="col">Project type</th>
+                <th class="col-2" scope="col">Due date</th>
+                <th class="col-1" scope="col" style="color: var(--bs-table-bg)">
+                  Remove
+                </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <!-- <th scope="row">1</th> -->
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <!-- <th scope="row">2</th> -->
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <!-- <th scope="row">3</th> -->
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </main>
     </div>
 
-    
-
     <!-- modal element -->
-    <div  
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Project Tracker
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="disabledSelect" class="form-label"
-                    >Disabled select menu</label
-                  >
-                  <select id="disabledSelect" class="form-select">
-                    <option>Disabled select</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="datepicker" class="form-label"
-                    >Example label</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="datepicker"
-                    placeholder="Date"
-                  />
-                </div>
+    <div
+      class="modal fade"
+      id="ProjectData"
+      tabindex="-1"
+      aria-labelledby="ProjectDataLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ProjectDataLabel">
+              Project Tracker
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="inputForm">
+              <div class="mb-3">
+                <label for="projectNameInput" class="form-label"
+                  >Project Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="projectNameInput"
+                  placeholder="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="projectTypeInput" class="form-label"
+                  >Project Type</label
+                >
+                <select id="projectTypeInput" class="form-select">
+                  <option>Web Application (Front End)</option>
+                  <option>Web Application (Back End)</option>
+                  <option>Web Application (Fullstack)</option>
+                  <option>Mobile Application</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="datepicker" class="form-label">Due Date</label>
+                <input
+                  type="input"
+                  class="form-control"
+                  id="datepicker"
+                  placeholder="Date"
+                  autocomplete="off"
+                />
+              </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-            <div class="modal-footer">
               <button
-                type="button"
-                class="btn btn-secondary"
+                type="submit"
+                class="btn btn-primary"
                 data-bs-dismiss="modal"
               >
-                Close
+                Submit
               </button>
-              <!-- <button type="button" class="btn btn-primary">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <!-- <button type="button" class="btn btn-primary">
                 Save changes
               </button> -->
-            </div>
           </div>
         </div>
+      </div>
     </div>
 
     <!-- scripts -->
@@ -152,7 +154,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- day.js -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
