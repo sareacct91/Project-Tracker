@@ -24,16 +24,23 @@
 
     <!-- <div class="container-fluid"></div> -->
     <div class="container-fluid">
-      <main class="row justify-content-between">
+      <main class="row justify-content-center">
         <!-- Card element -->
-        <div class="col-12">
-          <div class="card text-center p-0" style="width: 18rem">
+        <div class="col-12 col-lg-4 mb-3">
+          <div class="card text-center p-0">
             <div class="card-header bg-dark text-light">Project Tracker</div>
             <div class="card-body">
               <p class="card-text">
-                Click "Add Project" button to input your project name, select
-                your project type, and due date.
+                Click "Add Project" button to add your project to the list below. 
               </p>
+              <p class="fst-italic fs-9">(require: project name and due date)</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Project Name</li>
+              <li class="list-group-item">Project Type</li>
+              <li class="list-group-item">Due Date</li>
+            </ul>
+            <div class="card-footer">
               <button
                 type="button"
                 class="btn btn-primary"
@@ -47,7 +54,7 @@
         </div>
 
         <!-- Table -->
-        <div class="col-12">
+        <div class="col-12 col-lg-8">
           <table class="table table-striped col-9">
             <thead class="table-dark">
               <tr>
@@ -130,18 +137,6 @@
                 Submit
               </button>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <!-- <button type="button" class="btn btn-primary">
-                Save changes
-              </button> -->
           </div>
         </div>
       </div>
